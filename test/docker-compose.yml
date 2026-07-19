@@ -1,0 +1,11 @@
+services:
+  lab:
+    image: jupyter/scipy-notebook:latest
+    ports:
+      - "8888:8888"
+    environment:
+      - JUPYTER_TOKEN=lab      
+    volumes:
+      - ./ipynb_files:/home/jovyan/work 
+
+    restart: unless-stopped
